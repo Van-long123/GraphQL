@@ -45,6 +45,7 @@ const startServer=async () => {
     const apolloServer= new ApolloServer({
         // typeDefs:[typeDefsArticle,typeDefsCategory],resolvers
         typeDefs:typeDefs,resolvers:resolvers,
+        introspection:true,//này là gợi ý code khi trên online
         //sau khi chạy qua middlewareAuth sẽ chạy vào đây
         // và sau đó bên resolvers lấy đc nó ở tham số thứ 3
         context:({req,res})=>{
